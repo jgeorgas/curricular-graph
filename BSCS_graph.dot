@@ -1,0 +1,246 @@
+// ** Description: A dot specification of the NAU CS curriculum
+// ** Author: John Georgas
+// ** Version: 0
+
+graph BSCS_graph {
+	//compound=true;
+
+	//node [shape=diamond label="Entry into NAU"] ENTRY
+	//ENTRY -> INT //[lhead=cluster_pre, arrowhead="normal"]
+
+	subgraph cluster_pre {
+		label="Preparatory Steps"
+
+		node [shape=parallelogram label="MAT125 or MAT125H (4)"] MAT125
+		node [shape=trapezium label="Math Placement Test Results (ALEKS/MATHA 50+; MATHC 50+; PLACE 55+)"] MPT1
+		node [shape=trapezium label="Math Placement Test Results (ALEKS/MATHA 65+; MATHC 65+; PLACE 70+)"] MPT2
+		node [shape=trapezium label="Math Placement Test Results (ALEKS/MATHA 35+; MATHC 35+; PLACE 43+)"] MPT3
+		node [shape=trapezium label="International Exchange Student Group "] INT
+		node [shape=parallelogram label="CS 122 (3)"] CS122
+		node [shape=parallelogram label="MAT102X"] MAT102X
+	}
+	
+	subgraph cluster_major {
+		label = "Major Courses"
+
+		subgraph cluster_core {
+			label= "Core Courses (35 (on paper) (36, actually, I think))"
+			// ******************************
+			// ** Major Courses (60 units) **
+			// ******************************
+			// Core: 35 units (actually, 36, I think)
+
+			node [shape=doubleoctagon, label="CS 126 (3)"] CS126
+			node [shape=doubleoctagon, label="CS 126L (1)"] CS126L
+			node [shape=doubleoctagon, label="CS 136 (3)"] CS136
+			node [shape=doubleoctagon, label="CS 136L (1)"] CS136L
+			node [shape=doubleoctagon, label="CS 200 (3)"] CS200
+			node [shape=doubleoctagon, label="CS 212 (3)"] CS212
+			node [shape=doubleoctagon, label="CS 249 (3)"] CS249
+			node [shape=doubleoctagon, label="CS 301 (2)"] CS301
+			node [shape=doubleoctagon, label="CS 315 (3)"] CS315
+			node [shape=doubleoctagon, label="CS 386 (3)"] CS386
+			node [shape=doubleoctagon, label="CS 396 (3)"] CS396
+			node [shape=doubleoctagon, label="CS 421 (3)"] CS421
+			node [shape=doubleoctagon, label="CS 476 (2)"] CS476
+			node [shape=doubleoctagon, label="CS 480 (3)"] CS480
+			node [shape=doubleoctagon, label="CS 486C (4)"] CS486C
+		}
+
+		// CS Electives
+		subgraph cluster_cselectives {
+			label = "Computer Science Electives (select 21 units)"
+
+			node [shape=octagon, label="CS345 (3)\nPrinciples of Databases"] CS345
+			node [shape=octagon, label="CS413 (3)\nVirtual Worlds"] CS413
+			node [shape=octagon, label="CS430 (3)\nComputer Graphics"] CS430
+			node [shape=octagon, label="CS440 (3)\nSoftware Architecture"] CS440
+			node [shape=octagon, label="CS445 (3)\nData Mining"] CS445
+			node [shape=octagon, label="CS450 (3)\nIntroduction to Parallel Computing"] CS450
+			node [shape=octagon, label="CS460 (3)\nComputer Networks"] CS460
+			node [shape=octagon, label="CS470 (3)\nIntroduction to Intelligent Systems"] CS470
+			node [shape=octagon, label="CS477 (3)\nAdvanced User Interfaces"] CS477
+			node [shape=octagon, label="CS481 (3)\nCompilers"] CS481
+		}
+	}
+
+	// ******************************************************
+	// ** Preprofessional Requirements (at least 36 units) **
+	// ******************************************************
+
+	subgraph cluster_preprofessional_reqs {
+		label = "Preprofessional Requirements"
+
+		// Basic Science courses, select one of the following blocks (7-8 units):
+		subgraph cluster_physics {
+			label = "Basic Science: Physics (7 units)"
+
+			node [shape=box, label="PHY 161 (4)"] PHY161
+			node [shape=box, label="PHY 262 (3)"] PHY262
+		}
+
+		subgraph cluster_chemistry {
+			label = "Basic Science: Chemistry (8 units)"
+
+			node [shape=box, label="CHM 151 (4)"] CHM151
+			node [shape=box, label="CHM 151L (1)"] CHM151L
+			node [shape=box, label="CHM 152 (3)"] CHM152
+		}
+
+		subgraph cluster_biology {
+			label = "Basic Science: Biology (8 units)"
+
+			node [shape=box, label="BIO 181 (3)"] BIO181
+			node [shape=box, label="BIO 181L (1)"] BIO181L
+			node [shape=box, label="BIO 182 (3)"] BIO182
+			node [shape=box, label="BIO 182L (1)"] BIO182L
+		}
+
+		subgraph cluster_math {
+			label = "Mathematics (14 units)"
+
+			node [shape=box, label="MAT 136 (4)"] MAT136
+			node [shape=box, label="MAT 137 (4)"] MAT137
+			node [shape=box, label="MAT 226 (3)"] MAT226
+
+			subgraph cluster_linornum {
+				// (MAT 316 or MAT 362)
+				label = "Linear Algebra or Numerical Analysis (3 units)"
+
+				node [shape=box, label="MAT 316 (3)"] MAT316
+				node [shape=box, label="MAT 362 (3)"] MAT362
+			}
+		}
+
+		subgraph cluster_statistics {
+			label = "Statistics (3 units)"
+
+			// One of these
+			node [shape=box, label="CENE 225 (3)"] CENE225
+			node [shape=box, label="STA 270 (3)"] STA270
+			node [shape=box, label="STA 275 (3)"] STA275
+		}
+
+		subgraph cluster_techelect {
+			label = "Technical Electives (9 units)"
+
+			node [shape=box, label="Technical Elective 1 ()"] TE1
+			node [shape=box, label="Technical Elective 2 ()"] TE2
+			node [shape=box, label="Technical Elective 3 ()"] TE3
+		}
+
+		node [shape=box, label="ENG302W (3)"] ENG302W
+	}
+
+	subgraph cluster_libstud {
+		label = "Liberal Studies"
+		// *********************
+		// ** Liberal Studies **
+		// *********************
+		
+		// Foundations
+		node [label="ENG 105 (4)"] ENG105
+
+		// Math satisfied through major requirements
+
+		// ** Distribution **
+		// Aesthetic and Humanistic Inquiry
+		subgraph cluster_ahi {
+			label = "Aesthetic and Humanistic Inquiry (6 units)"
+
+			node [label="AHI1 ()"] AHI1
+			node [label="AHI2 ()"] AHI2
+		}
+		
+
+		// Cultural Understanding
+		subgraph cluster_cu {
+			label = "Cultural Understanding (6 units)"
+
+			node [label="CU1 ()"] CU1
+			node [label="CU2 ()"] CU2
+		}
+
+		// Science satisfied through major requirements
+
+		// Social and Political Worlds
+		subgraph cluster_spw {
+			label = "Social and Political Worlds (6 units)"
+
+			node [label="SPW1 ()"] SPW1
+			node [label="SPW2 ()"] SPW2
+		}
+	
+		// LS Elective
+		node [label="Liberal Studies Elective ()"] LSE
+
+	}
+	
+	// 
+	// Edges for Major Courses
+	//
+	MPT1 -- CS126 [arrowhead="normal"]
+	MAT125 -- CS126 [arrowhead="odot"]
+	CS126L -- CS126 [arrowhead="odot"]
+	CS126 -- CS126L [arrowhead="odot"]
+	CS126 -- CS136 [arrowhead="normal"]
+	MAT136 -- CS136 [arrowhead="odot"]
+	MPT2 -- CS136 [arrowhead="normal"]
+	CS136 -- CS136L [arrowhead="odot"]
+	CS136L -- CS136 [arrowhead="odot"]
+	CS126 -- CS200 [arrowhead="normal"]
+	CS122 -- CS212 [arrowhead="normal"]
+	CS126 -- CS212 [arrowhead="normal"]
+	CS136 -- CS249 [arrowhead="normal"]
+	MAT226 -- CS249 [arrowhead="odot"]
+	CS249 -- CS301 [arrowhead="normal"]
+	MAT226 -- CS315 [arrowhead="normal"]
+	CS249 -- CS315 [arrowhead="normal"]
+	CS249 -- CS386 [arrowhead="normal"]
+	CS249 -- CS396 [arrowhead="normal"]
+	CS249 -- CS421 [arrowhead="normal"]
+	CS386 -- CS476 [arrowhead="normal"]
+	CS249 -- CS480 [arrowhead="normal"]
+	CS315 -- CS486C [arrowhead="normal"]
+	CS396 -- CS486C [arrowhead="normal"]
+	CS476 -- CS486C [arrowhead="normal"]
+
+	// 
+	// Edges for preprofessional
+	//
+	MAT136 -- PHY161 [arrowhead="normal"]
+	PHY161 -- PHY262 [arrowhead="normal"]
+	MAT137 -- PHY262 [arrowhead="odot"]
+	MAT102X -- CHM151 [arrowhead="normal"]
+	MPT3 -- CHM151 [arrowhead="normal"]
+	INT -- CHM151 [arrowhead="normal"]
+	CHM151 -- CHM151L [arrowhead="odot"]
+	CHM151 -- CHM152 [arrowhead="normal"]
+	BIO181 -- BIO181L [arrowhead="odot"]
+	BIO181L -- BIO181 [arrowhead="odot"]
+	BIO181 -- BIO182 [arrowhead="normal"]
+	BIO182 -- BIO182L [arrowhead="odot"]
+	BIO182L -- BIO182 [arrowhead="odot"]
+	MAT125 -- MAT136 [arrowhead="normal"]
+	MPT2 -- MAT136 [arrowhead="normal"]
+	INT -- MAT136 [arrowhead="normal"]
+	MAT136 -- MAT137 [arrowhead="normal"]
+	MAT125 -- MAT226 [arrowhead="normal"]
+	MPT2 -- MAT226 [arrowhead="normal"]
+	INT -- MAT226 [arrowhead="normal"]
+
+	//
+	// Edges for electives
+	//
+	CS249 -- CS345 [arrowhead="normal"]
+	CS249 -- CS413 [arrowhead="normal"]
+	CS249 -- CS430 [arrowhead="normal"]
+	CS386 -- CS440 [arrowhead="normal"]
+	CS249 -- CS445 [arrowhead="normal"]
+	CS249 -- CS450 [arrowhead="normal"]
+	CS249 -- CS460 [arrowhead="normal"]
+	CS249 -- CS470 [arrowhead="normal"]
+	CS386 -- CS477 [arrowhead="normal"]
+	CS315 -- CS481 [arrowhead="normal"]
+	CS396 -- CS481 [arrowhead="normal"]
+}
