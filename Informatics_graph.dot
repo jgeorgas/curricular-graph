@@ -9,6 +9,7 @@ graph informatics_graph {
 	//ENTRY -> INT //[lhead=cluster_pre, arrowhead="normal"]
 
 	node [label = "Note: Informatics as core, Computer Science as sub-plan?"] n1;
+	node [label = "Note: If we're going to include CIS310, we should probably ask them to add CS126 or CS136 to the prereqs?"] n2;
 
 	subgraph cluster_core {
 		label = "Computer Science Core (xx units; at least 24; currently 25)";
@@ -51,7 +52,7 @@ graph informatics_graph {
 		node [shape=doubleoctagon, label="CS xxx (3)\nFormal Methods in Software Engineering"] CSxxxx_form;
 
 		// Common
-		node [shape=doubleoctagon, label="CS 476 (2)\nCapstone I"] CS476;
+		node [shape=doubleoctagon, label="CS 476 (2)\nCapstone I"] CS476se;
 	}
 
 	subgraph cluster_act {
@@ -61,6 +62,7 @@ graph informatics_graph {
 		node [shape=doubleoctagon, label="CS 212 (3)\nWeb Programming"] CS212;
 		node [shape=doubleoctagon, label="CS 312 (3)\nWeb Application Design"] CS312;
 		node [shape=doubleoctagon, label="CS 248 (3)\nFoundations of Computer Science"] CS248;
+		node [shape=octagon, label="CIS 310 (3)\nDatabase Analysis, Modeling, and Design"] CIS310;
 	}
 
 	// **
@@ -101,6 +103,7 @@ graph informatics_graph {
 	CS112 -- CS212 [arrowhead="normal"];
 	CS212 -- CS312 [arrowhead="normal"];	
 	CS136 -- CS248  [arrowhead="normal"];
+	CS136 -- CIS310  [arrowhead="normal"];
 	//CS480 -- CS476 [arrowhead="normal"];
 	//CS286 -- CS476 [arrowhead="normal"];
 	//CS476 -- CS486C [arrowhead="normal"];
