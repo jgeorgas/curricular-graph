@@ -1,0 +1,108 @@
+// ** Description: A dot specification of the NAU CS curriculum
+// ** Author: John Georgas
+// ** Version: 0
+
+graph informatics_graph {
+	//compound=true;
+
+	//node [shape=diamond label="Entry into NAU"] ENTRY
+	//ENTRY -> INT //[lhead=cluster_pre, arrowhead="normal"]
+
+	node [label = "Note: Informatics as core, Computer Science as sub-plan?"] n1;
+
+	subgraph cluster_core {
+		label = "Computer Science Core (xx units; at least 24; currently 25)";
+
+		node [shape=doubleoctagon, label="CS 126 (3)\nComputer Science I"] CS126;
+		node [shape=doubleoctagon, label="CS 126L (1)\nComputer Science I Lab"] CS126L;
+		node [shape=doubleoctagon, label="CS 136 (3)\nComputer Science II"] CS136;
+		node [shape=doubleoctagon, label="CS 136L (1)\nComputer Science I Lab"] CS136L;
+		node [shape=doubleoctagon, label="CS 286 (3)\nIntroduction to Software Engineering"] CS286;
+		node [shape=doubleoctagon, label="CS 249 (3)\nData Structures"] CS249;
+		node [shape=doubleoctagon, label="CS 301 (2)\nEthics"] CS301;
+		node [shape=doubleoctagon, label="CS 480 (3)\nOperating Systems"] CS480;
+
+		node [shape=parallelogram, label="Senior year (xx units completed)"] senior;
+		node [shape=doubleoctagon, label="CS 486C (4)\nCapstone II"] CS486C;
+	}
+
+	subgraph cluster_cs_classic {
+		label = "Computer Science Classic (xx units; at least 18 with 15 unique; currently 0)";
+
+		node [shape=doubleoctagon, label="CS 200 (3)\nIntroduction to Computer Organization"] CS200;
+		node [shape=doubleoctagon, label="CS 315 (3)\nAutomata Theory"] CS315;
+		node [shape=doubleoctagon, label="CS 396 (3)\nPrinciples of Languages"] CS396;
+		node [shape=doubleoctagon, label="CS 421 (3)\nAlgorithms"] CS421;
+
+		// Common
+		node [shape=doubleoctagon, label="CS 476 (2)\nCapstone I"] CS476;
+	}
+
+	subgraph cluster_se {
+		label = "Software Engineering (xx units; at least 18 with 15 unique; currently 0)";
+
+		node [shape=doubleoctagon, label="CS 386 (3)\nSoftware Engineering Tools"] CS386;
+		//node [shape=doubleoctagon, label="CS 477 (3)\nUser Interfaces"] CS477;
+
+		node [shape=doubleoctagon, label="CS 440 (3)\nSoftware Architecture"] CS440;
+		node [shape=doubleoctagon, label="CS xxx (3)\nRequirements Engineering"] CSxxx_reqs;
+		node [shape=doubleoctagon, label="CS xxx (3)\nProject Management"] CSxxx_projmgmt;
+		node [shape=doubleoctagon, label="CS xxx (3)\nTesting and Quality Assurance"] CSxxx_test;
+		node [shape=doubleoctagon, label="CS xxx (3)\nFormal Methods in Software Engineering"] CSxxxx_form;
+
+		// Common
+		node [shape=doubleoctagon, label="CS 476 (2)\nCapstone I"] CS476;
+	}
+
+	subgraph cluster_act {
+		label = "Applied Computing Technology (xx units; at least 18 with 15 unique; currently 0)";
+
+		node [shape=doubleoctagon, label="CS 112 (3)\nIntroduction To The World Wide Web And Internet"] CS112;
+		node [shape=doubleoctagon, label="CS 212 (3)\nWeb Programming"] CS212;
+		node [shape=doubleoctagon, label="CS 312 (3)\nWeb Application Design"] CS312;
+		node [shape=doubleoctagon, label="CS 248 (3)\nFoundations of Computer Science"] CS248;
+	}
+
+	// **
+	// ** CORE EDGES
+	// **
+	CS126L -- CS126 [arrowhead="odot"];
+	CS126 -- CS126L [arrowhead="odot"];
+	CS136L -- CS136 [arrowhead="odot"];
+	CS136 -- CS136L [arrowhead="odot"];
+	CS126 -- CS136 [arrowhead="normal"];
+	CS136 -- CS286 [arrowhead="normal"];
+	CS136 -- CS249 [arrowhead="normal"];
+	CS286 -- CS301 [arrowhead="normal"];
+	CS249 -- CS480 [arrowhead="normal"];
+	senior -- CS486C [arrowhead="normal"];
+
+	// **
+	// ** SE EDGES
+	// **
+	CS286 -- CS386 [arrowhead="normal"];
+	CS386 -- CS440 [arrowhead="normal"];
+	CS386 -- CSxxx_reqs [arrowhead="normal"];
+	CS386 -- CSxxx_test [arrowhead="normal"];
+	CS386 -- CSxxx_projmgmt [arrowhead="normal"];
+	CS249 -- CSxxxx_form [arrowhead="normal"];
+
+	// **
+	// ** CSC EDGES
+	// **
+	CS126 -- CS200 [arrowhead="normal"];
+	CS249 -- CS315 [arrowhead="normal"];
+	CS315 -- CS421 [arrowhead="normal"];
+	CS249 -- CS396 [arrowhead="normal"];
+
+	// **
+	// ** ACT EDGES
+	// **
+	CS112 -- CS212 [arrowhead="normal"];
+	CS212 -- CS312 [arrowhead="normal"];	
+	CS136 -- CS248  [arrowhead="normal"];
+	//CS480 -- CS476 [arrowhead="normal"];
+	//CS286 -- CS476 [arrowhead="normal"];
+	//CS476 -- CS486C [arrowhead="normal"];
+
+}
