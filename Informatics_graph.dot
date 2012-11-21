@@ -23,7 +23,7 @@ graph informatics_graph {
 		node [shape=doubleoctagon, label="CS 301 (2)\nEthics"] CS301;
 		node [shape=doubleoctagon, label="CS 480 (3)\nOperating Systems"] CS480;
 
-		node [shape=parallelogram, label="Senior year (xx units completed)"] senior;
+		//node [shape=parallelogram, label="Senior year (xx units completed)"] senior;
 		node [shape=doubleoctagon, label="CS 486C (4)\nCapstone II"] CS486C;
 	}
 
@@ -63,7 +63,24 @@ graph informatics_graph {
 		node [shape=doubleoctagon, label="CS 312 (3)\nWeb Application Design"] CS312;
 		node [shape=doubleoctagon, label="CS 248 (3)\nFoundations of Computer Science"] CS248;
 		node [shape=octagon, label="CIS 310 (3)\nDatabase Analysis, Modeling, and Design"] CIS310;
+		node [shape=octagon, label="VC 101 (3)\nCommunication Design"] VC101;
+		node [shape=octagon, label="VC 251 (3)\nComputer Imaging"] VC251;
 	}
+
+	subgraph cluster_cselectives {
+			label = "Computer Science Electives"
+
+			node [shape=octagon, label="CS345 (3)\nPrinciples of Databases"] CS345
+			node [shape=octagon, label="CS413 (3)\nVirtual Worlds"] CS413
+			node [shape=octagon, label="CS430 (3)\nComputer Graphics"] CS430
+			node [shape=octagon, label="CS440 (3)\nSoftware Architecture"] CS440
+			node [shape=octagon, label="CS445 (3)\nData Mining"] CS445
+			node [shape=octagon, label="CS450 (3)\nIntroduction to Parallel Computing"] CS450
+			node [shape=octagon, label="CS460 (3)\nComputer Networks"] CS460
+			node [shape=octagon, label="CS470 (3)\nIntroduction to Intelligent Systems"] CS470
+			node [shape=octagon, label="CS477 (3)\nAdvanced User Interfaces"] CS477
+			node [shape=octagon, label="CS481 (3)\nCompilers"] CS481
+		}
 
 	// **
 	// ** CORE EDGES
@@ -77,7 +94,7 @@ graph informatics_graph {
 	CS136 -- CS249 [arrowhead="normal"];
 	CS286 -- CS301 [arrowhead="normal"];
 	CS249 -- CS480 [arrowhead="normal"];
-	senior -- CS486C [arrowhead="normal"];
+	//senior -- CS486C [arrowhead="normal"];
 
 	// **
 	// ** SE EDGES
@@ -88,6 +105,8 @@ graph informatics_graph {
 	CS386 -- CSxxx_test [arrowhead="normal"];
 	CS386 -- CSxxx_projmgmt [arrowhead="normal"];
 	CS249 -- CSxxxx_form [arrowhead="normal"];
+	CSxxx_reqs -- CS476se [arrowhead="normal"];
+	CS476se -- CS486C [arrowhead="normal"];
 
 	// **
 	// ** CSC EDGES
@@ -96,16 +115,34 @@ graph informatics_graph {
 	CS249 -- CS315 [arrowhead="normal"];
 	CS315 -- CS421 [arrowhead="normal"];
 	CS249 -- CS396 [arrowhead="normal"];
+	CS421 -- CS476 [arrowhead="normal"];
+	CS476 -- CS486C [arrowhead="normal"];
 
 	// **
 	// ** ACT EDGES
 	// **
 	CS112 -- CS212 [arrowhead="normal"];
 	CS212 -- CS312 [arrowhead="normal"];	
-	CS136 -- CS248  [arrowhead="normal"];
-	CS136 -- CIS310  [arrowhead="normal"];
+	CS136 -- CS248 [arrowhead="normal"];
+	CS136 -- CIS310 [arrowhead="normal"];
+	CS312 -- CS486C [arrowhead="normal"];
 	//CS480 -- CS476 [arrowhead="normal"];
 	//CS286 -- CS476 [arrowhead="normal"];
 	//CS476 -- CS486C [arrowhead="normal"];
+
+	// **
+	// ** ELECTIVES EDGES
+	// **
+	CS249 -- CS345 [arrowhead="normal"]
+	CS249 -- CS413 [arrowhead="normal"]
+	CS249 -- CS430 [arrowhead="normal"]
+	CS386 -- CS440 [arrowhead="normal"]
+	CS249 -- CS445 [arrowhead="normal"]
+	CS249 -- CS450 [arrowhead="normal"]
+	CS249 -- CS460 [arrowhead="normal"]
+	CS249 -- CS470 [arrowhead="normal"]
+	CS386 -- CS477 [arrowhead="normal"]
+	CS315 -- CS481 [arrowhead="normal"]
+	CS396 -- CS481 [arrowhead="normal"]
 
 }
